@@ -11,6 +11,11 @@ import digits.framework.ProgramContainer;
 import digits.framework.Renderer;
 import digits.framework.TextAlign;
 
+/**
+ * The panel to the right on the GUI. Displays the output of the NN and its statistics from the LearningAgent
+ * @author Robin Gather
+ *
+ */
 public class Stats extends GUIElement{
 
 	private double[] outputs;

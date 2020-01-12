@@ -8,6 +8,11 @@ import digits.ai.LearningAgent;
 import digits.framework.Renderer;
 import digits.framework.TextAlign;
 
+/**
+ * Button on the GUI
+ * @author Robin Gather
+ *
+ */
 public class Button extends GUIElement {
 
 	private String string;

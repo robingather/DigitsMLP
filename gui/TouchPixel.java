@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import digits.ProgramManager;
 import digits.framework.Renderer;
 
+/**
+ * A single pixel in the interactable grid to the left of the GUI.
+ * @author Robin Gather
+ *
+ */
 public class TouchPixel extends GUIElement {
 
 	private int index;

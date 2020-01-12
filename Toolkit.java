@@ -1,5 +1,10 @@
 package digits;
 
+/**
+ * Small Toolkit of methods for quick use throughout the program.
+ * @author Robin Gather
+ *
+ */
 public class Toolkit {
 
 	public static double round(double value, int decimals) {

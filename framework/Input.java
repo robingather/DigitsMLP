@@ -5,6 +5,11 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Basic user input handler class
+ * @author Robin Gather
+ *
+ */
 public class Input implements KeyListener, MouseListener {
 
 	private final int NUM_KEYS = 256;

@@ -2,7 +2,8 @@ package digits.mnist;
 import java.io.*;
 
 /**
- * read MIT notice
+ * Reads MNIST Data
+ * @author Read LICENSE
  *
  */
 public class MnistDataReader  {

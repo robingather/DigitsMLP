@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+/**
+ * This class has the properties of the neural network as well as the logic to propagate and backpropagate.
+ * @author Robin Gather
+ *
+ */
 public class NeuralNetwork {
 
 	private Layer inputLayer;
@@ -27,6 +32,10 @@ public class NeuralNetwork {
 		
 	}
 
+	/**
+	 * Importation constructor
+	 * @param name, filename
+	 */
 	public NeuralNetwork(String name) {
 		
 		File file = new File("export/"+name);
@@ -168,6 +177,11 @@ public class NeuralNetwork {
 		
 	}
 	
+	/**
+	 * Backpropagation algorithm
+	 * @param expectedOutput, correct output
+	 * @param learning_rate
+	 */
 	public void backpropagate(double[] expectedOutput, double learning_rate) {
 		
 		double[] output = getOutputs();
@@ -192,11 +206,11 @@ public class NeuralNetwork {
 				d[i] *= layer.getNode(i)*(1.0-layer.getNode(i));
 				
 				for(int j = 0; j < lastLayer.getLength(); j++) {
-					double dEtotDIVdW = d[i]*lastLayer.getNode(j);
+					double dEtotDIVdW = d[i]*lastLayer.getNode(j); //derivative of error relative to weight
 					lastLayer.addWeightNudge(j, i, -learning_rate*dEtotDIVdW);
 				}
 				
-				double biasdEtotDIVdW = d[i]*bias;
+				double biasdEtotDIVdW = d[i]*bias; 
 				lastLayer.addWeightNudge(lastLayer.getLength()-1, i, -learning_rate*biasdEtotDIVdW);
 				
 			}

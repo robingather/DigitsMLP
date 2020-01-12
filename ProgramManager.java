@@ -13,6 +13,11 @@ import digits.framework.TextAlign;
 import digits.gui.Stats;
 import digits.gui.TouchPixel;
 
+/**
+ * Main program class. This represents the program. It is built upon the ProgramContainer and within it holds all the entities and logic specific to this program.
+ * @author Robin Gather
+ *
+ */
 public class ProgramManager {
 
 	public static int PIXELSIZE = 20;
@@ -46,6 +51,9 @@ public class ProgramManager {
 		
 	}
 	
+	/**
+	 * Creates the NeuralNetwork and LearningAgent. Here you can specify the different variables or specify a file to import the NN from.
+	 */
 	private void createAI() {
 		
 		double weightsLowerBound = -1.0, weightsUpperBound = 1.0;
@@ -88,21 +96,7 @@ public class ProgramManager {
 		
 		if(input.isKeyDown(KeyEvent.VK_R))
 			clearField();
-		
-		if(input.isKeyDown(KeyEvent.VK_I)) {
-			System.out.print("train coordinates { ");
-			for(int b = 0; b < la.trainErrorForLatex.size(); b++) {
-				System.out.print("("+b+","+la.trainErrorForLatex.get(b)+")");
-			}
-			System.out.print("\n};\n");
-			System.out.print("test coordinates { ");
-			for(int b = 0; b < la.testErrorForLatex.size(); b++) {
-				System.out.print("("+b+","+la.testErrorForLatex.get(b)+")");
-			}
-			System.out.print("\n};\n");
-		}
 			
-		
 		if(training) {
 			clearField();
 			stats.update(this, la, new double[] {0,0,0,0,0,0,0,0,0,0});

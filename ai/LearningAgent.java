@@ -2,7 +2,6 @@ package digits.ai;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -13,10 +12,12 @@ import digits.framework.ProgramContainer;
 import digits.mnist.MnistDataReader;
 import digits.mnist.MnistMatrix;
 
+/**
+ * The machine learning component of the program. This contains the logic to process and train the network as well log its performance statistics
+ * @author Robin Gather
+ *
+ */
 public class LearningAgent {
-
-	public ArrayList<Double> testErrorForLatex = new ArrayList<>();
-	public ArrayList<Double> trainErrorForLatex = new ArrayList<>();
 	
 	private NeuralNetwork net;
 	private List<MnistMatrix> trainMatrices, testMatrices;
@@ -55,6 +56,11 @@ public class LearningAgent {
 		
 	}
 	
+	/**
+	 * Training loop
+	 * @param pc
+	 * @param pm
+	 */
 	public void train(ProgramContainer pc, ProgramManager pm) {
 
 		boolean exit = false;
@@ -121,11 +127,8 @@ public class LearningAgent {
 				trainAccuracy = cumTrainAccuracy/trainAmount;
 
 				test();
-				testErrorForLatex.add(testError);
-				trainErrorForLatex.add(trainError);
 				System.out.println("\nTotal Error = "+Toolkit.round(trainError,3)+" / "+Toolkit.round(testError,3));
 				System.out.println("Accuracy = "+Toolkit.round(trainAccuracy*100,3)+"% / "+Toolkit.round(testAccuracy*100,3)+"%");
-				//System.out.println("Average Delta = "+String.valueOf(Toolkit.round(delta,10)));
 				
 			} else {
 				
@@ -138,6 +141,9 @@ public class LearningAgent {
 		
 	}
 	
+	/**
+	 * Runs through testing set and gets its statistics.
+	 */
 	public void test() {
 		
 		testError = 0;

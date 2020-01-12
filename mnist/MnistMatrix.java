@@ -1,7 +1,8 @@
 package digits.mnist;
 
 /**
- * read MIT notice
+ * Holds MNIST Data in an easy to use format
+ * @author Read LICENSE
  *
  */
 public class MnistMatrix {

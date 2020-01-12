@@ -6,6 +6,11 @@ import javax.swing.JPanel;
 
 import digits.ProgramManager;
 
+/**
+ * Foundational runnable loop of the program
+ * @author Robin Gather
+ *
+ */
 @SuppressWarnings("serial")
 public class ProgramContainer extends JPanel implements Runnable {
 

@@ -1,5 +1,10 @@
 package digits.ai;
 
+/**
+ * Holds all nodes and weights for this layer as well as multiple manipulation methods.
+ * @author Robin Gather
+ *
+ */
 public class Layer {
 
 	private double[] nodes;
@@ -49,7 +54,7 @@ public class Layer {
 	}
 	
 	/**
-	 * 
+	 * Applies the weight nudges to the weight matrix
 	 * @return the average change to the weights
 	 */
 	public double applyNudges() {

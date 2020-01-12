@@ -6,6 +6,11 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+/**
+ * Used to render shapes and text to the screen in a streamlined manner
+ * @author Robin Gather
+ *
+ */
 public class Renderer {
 
 	private Graphics2D g2d;
