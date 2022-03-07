@@ -1,2 +1,2 @@
 # DigitsMLP
-Data Mining project source code. This code is not runnable, since the data isn't provided and the file structure is off. If you want to test the program, you can run DigitsMLP.jar
+Data Mining project source code. You can run DigitsMLP.jar. The rest of the files exist for you to inspect the code.
